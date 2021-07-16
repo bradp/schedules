@@ -1,5 +1,5 @@
 === Schedules ===
-Contributors: bradparbs
+Contributors: bradparbs, surfboards
 Tags: posts, schedule, scheduled, content, calendar, widget, dashboard
 Requires at least: 5.2
 Tested up to: 5.7.2
