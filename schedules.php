@@ -16,13 +16,18 @@ namespace Schedules;
 
 use WP_Query;
 
-defined( 'ABSPATH' ) || die();
-
 // Add new dashboard widget with list of scheduled posts.
 add_action(
 	'wp_dashboard_setup',
 	function () {
-		wp_add_dashboard_widget( 'scheduled', '<span><span class="dashicons dashicons-clock" style="padding-right: 10px"></span>' . esc_attr__( 'Scheduled' ) . '</span>', __NAMESPACE__ . '\\dashboard_widget' );
+		wp_add_dashboard_widget(
+			'schedules',
+			sprintf(
+				'<span><span class="dashicons dashicons-clock" style="padding-right: 10px"></span>%s</span>',
+				esc_attr__( 'Scheduled', 'schedules' )
+			),
+			__NAMESPACE__ . '\\dashboard_widget'
+		);
 	}
 );
 
@@ -30,7 +35,7 @@ add_action(
  * Add dashboard widget for scheduled posts.
  */
 function dashboard_widget() {
-	$posts = new \WP_Query(
+	$posts = new WP_Query(
 		[
 			'post_type'      => get_post_types(),
 			'post_status'    => 'future',
