@@ -27,6 +27,6 @@ Quickly and easily view all your scheduled posts.
 
 * Added more filters
 
-= 1.0.3 =
+= 1.0.0 =
 
 * Initial release
